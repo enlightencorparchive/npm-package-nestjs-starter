@@ -1,3 +1,5 @@
+![Build package](https://github.com/ordinary-yobi/nestjs-package-template/workflows/Build%20package/badge.svg?branch=master)
+
 # Introduction
 
 NestJS module 중 재사용이 필요한 npm package 로 작성하고 publish 할 수 있는 template 입니다.
