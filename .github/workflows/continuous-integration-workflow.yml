@@ -9,6 +9,7 @@ on:
       - '.gitignore'
       - '.prettierrc'
       - '.npmrc'
+      - 'README.md'
     # 어떤 branch 에서 동작할 지
     branches:
       - master
