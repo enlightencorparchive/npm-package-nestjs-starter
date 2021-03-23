@@ -1,4 +1,4 @@
-![Build package](https://github.com/ordinary-yobi/nestjs-package-template/workflows/Build%20package/badge.svg?branch=master)
+[![Publish package](https://github.com/ordinary-yobi/template-npm-package-nestjs/actions/workflows/workflows.yml/badge.svg)](https://github.com/ordinary-yobi/template-npm-package-nestjs/actions/workflows/workflows.yml)
 
 # Introduction
 
