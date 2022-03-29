@@ -12,7 +12,7 @@ on:
       - 'README.md'
     # 어떤 branch 에서 동작할 지
     branches:
-      - master
+      - main
 
 # build 를 실행합니다.
 jobs:
@@ -24,10 +24,10 @@ jobs:
       # 이 부분에서 npmrc 파일을 설정한다고 하는데, 이미 있는 경우 없어도되는걸까요
       - uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: 14
           registry-url: https://npm.pkg.github.com/
           scope: '@solarconnect'
-      - run: yarn install
-      - run: yarn publish
+      - run: npm install
+      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
