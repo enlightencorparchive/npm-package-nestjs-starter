@@ -2,3 +2,4 @@
 // for example:
 // export * from './decorators';
 export * from './sample.module';
+export * from './sample.service';
