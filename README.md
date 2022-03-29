@@ -54,7 +54,7 @@ sample 을 참고하여 테스트 코드를 작성하고, 예외처리를 해주
 # Build
 
 ```shell script
-yarn build
+npm run build
 ```
 
 # Publish
