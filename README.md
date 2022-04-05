@@ -1,4 +1,4 @@
-![Build package](https://github.com/ordinary-yobi/npm-package-nestjs-starter/workflows/Build%20package/badge.svg?branch=main)
+![Build package](https://github.com/solarconnect/nestjs-package-template/workflows/Build%20package/badge.svg?branch=master)
 
 # Introduction
 
