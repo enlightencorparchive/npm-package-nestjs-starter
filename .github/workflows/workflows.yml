@@ -26,8 +26,22 @@ jobs:
         with:
           node-version: 14
           registry-url: https://npm.pkg.github.com/
-          scope: '@solarconnect'
-      - run: npm install
+      - run: npm ci
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+#  publish-npm-registry:
+#    # 실행 환경
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v2
+#      # 이 부분에서 npmrc 파일을 설정한다고 하는데, 이미 있는 경우 없어도되는걸까요
+#      - uses: actions/setup-node@v1
+#        with:
+#          node-version: 14
+#          registry-url: https://registry.npmjs.org/
+#      - run: npm install
+#      - run: npm publish
+#        env:
+#          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
