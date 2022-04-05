@@ -1,7 +1,7 @@
 {
-  "name": "@solarconnect/nestjs-package-template",
+  "name": "@solarconnect/npm-package-nestjs-starter",
   "version": "0.0.1",
-  "description": "Github Packages npm template for NestJS modules",
+  "description": "NPM package starter based on NestJS",
   "contributors": [
     "Yobi <ordinary.yobi@gmail.com> (https://yobi.dev)"
   ],
@@ -32,9 +32,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:solarconnect/nestjs-package-template.git"
+    "url": "git@github.com:solarconnect/npm-package-nestjs-starter.git"
   },
-  "bugs": "https://github.com/solarconnect/nestjs-package-template.git",
+  "bugs": "https://github.com/solarconnect/npm-package-nestjs-starter.git",
   "peerDependencies": {
     "@nestjs/common": "^7.4.2"
   },
