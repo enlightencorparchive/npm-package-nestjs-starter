@@ -1,6 +1,6 @@
 {
   "name": "@ordinary-yobi/npm-package-nestjs-starter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "NPM package starter based on NestJS",
   "contributors": [
     "Yobi <ordinary.yobi@gmail.com> (https://yobi.dev)"
