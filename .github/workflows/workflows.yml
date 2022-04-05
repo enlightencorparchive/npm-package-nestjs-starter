@@ -16,7 +16,6 @@ on:
 
 # build 를 실행합니다.
 jobs:
-
   publish-github-package-registry:
     # 실행 환경
     runs-on: ubuntu-latest
