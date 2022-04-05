@@ -1,7 +1,7 @@
 {
-  "name": "@ordinary-yobi/template-npm-package-nestjs",
-  "version": "0.0.5",
-  "description": "Github Packages npm template for NestJS modules",
+  "name": "@ordinary-yobi/npm-package-nestjs-starter",
+  "version": "0.0.1",
+  "description": "NPM package starter based on NestJS",
   "contributors": [
     "Yobi <ordinary.yobi@gmail.com> (https://yobi.dev)"
   ],
@@ -15,12 +15,13 @@
   ],
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "tsc",
+    "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "keywords": [
@@ -31,39 +32,44 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:ordinary-yobi/template-npm-package-nestjs.git"
+    "url": "git@github.com:ordinary-yobi/npm-package-nestjs-starter.git"
   },
-  "bugs": "https://github.com/ordinary-yobi/template-npm-package-nestjs.git",
+  "bugs": "https://github.com/ordinary-yobi/npm-package-nestjs-starter/issues",
   "peerDependencies": {
     "@nestjs/common": "^7.4.2"
   },
   "dependencies": {
-    "@nestjs/common": "^7.6.15",
-    "@nestjs/core": "^7.6.15",
+    "@nestjs/common": "^8.0.0",
+    "@nestjs/core": "^8.0.0",
+    "@nestjs/platform-express": "^8.0.0",
     "reflect-metadata": "^0.1.13",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "rxjs": "^7.2.0"
   },
   "devDependencies": {
-    "@nestjs/cli": "^7.5.6",
-    "@nestjs/schematics": "^7.3.0",
-    "@nestjs/testing": "^7.6.15",
-    "@types/express": "^4.17.11",
-    "@types/jest": "26.0.21",
-    "@types/node": "^14.14.35",
-    "@types/supertest": "^2.0.8",
-    "@typescript-eslint/eslint-plugin": "4.19.0",
-    "@typescript-eslint/parser": "4.19.0",
-    "eslint": "7.22.0",
-    "eslint-config-prettier": "^8.1.0",
-    "eslint-plugin-import": "^2.22.1",
-    "jest": "26.6.3",
-    "prettier": "^2.2.1",
+    "@nestjs/cli": "^8.0.0",
+    "@nestjs/schematics": "^8.0.0",
+    "@nestjs/testing": "^8.0.0",
+    "@types/express": "^4.17.13",
+    "@types/jest": "27.4.1",
+    "@types/node": "^16.0.0",
+    "@types/supertest": "^2.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
+    "jest": "^27.2.5",
+    "lint-staged": "^12.3.7",
+    "prettier": "^2.3.2",
+    "source-map-support": "^0.5.20",
     "supertest": "^6.1.3",
-    "ts-jest": "26.5.4",
-    "ts-loader": "^8.0.18",
-    "ts-node": "^9.1.1",
-    "tsconfig-paths": "^3.9.0",
-    "typescript": "^4.2.3"
+    "ts-jest": "^27.0.3",
+    "ts-loader": "^9.2.3",
+    "ts-node": "^10.0.0",
+    "tsconfig-paths": "^3.10.1",
+    "typescript": "^4.3.5"
   },
   "jest": {
     "moduleFileExtensions": [
@@ -72,11 +78,17 @@
       "ts"
     ],
     "rootDir": "src",
-    "testRegex": ".spec.ts$",
+    "testRegex": ".*\\.spec\\.ts$",
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
     },
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
+  },
+  "lint-staged": {
+    "*.ts": "npm run format"
   }
 }

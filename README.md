@@ -1,10 +1,10 @@
-[![Publish package](https://github.com/ordinary-yobi/template-npm-package-nestjs/actions/workflows/workflows.yml/badge.svg)](https://github.com/ordinary-yobi/template-npm-package-nestjs/actions/workflows/workflows.yml)
+![Build package](https://github.com/ordinary-yobi/npm-package-nestjs-starter/workflows/Build%20package/badge.svg?branch=main)
 
 # Introduction
 
 NestJS module 중 재사용이 필요한 npm package 로 작성하고 publish 할 수 있는 template 입니다.
 
-# Github Packages
+# GitHub Packages
 
 재사용이 가능한 NestJS modules 를 Github Packages Registry 를 사용해 관리합니다.
 
@@ -12,11 +12,11 @@ NestJS module 중 재사용이 필요한 npm package 로 작성하고 publish �
 
 https://docs.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages
 
-https://github.community/t/download-from-github-package-registry-without-authentication/14407  
+https://github.community/t/download-from-github-package-registry-without-authentication/14407
 
 ## Configuration
 
-### Personal access token
+### Personal access token(Optional)
 
 아래의 link 를 참조하여 github 의 personal access token 을 생성하세요.
 
@@ -35,7 +35,7 @@ https://github.community/t/download-from-github-package-registry-without-authent
 module 을 개발하는 빙법입니다.
 
 ## Create a module
- 
+
 module 을 생성할 때 는 `nest cli` 를 사용합니다.
 
 ```shell script
@@ -46,36 +46,50 @@ nest g mo sample --flat
 
 그 외 `service` 등 필요한 기능을 작성하고, `module` 에 import 합니다.
 
-
 ## Test the module
 
 sample 을 참고하여 테스트 코드를 작성하고, 예외처리를 해주세요.
 
+## Use package
+
+package 를 global local repository 에 설치하세요. package 프로젝트 경로에서 아래를 실행하세요.
+
+```
+npm link
+```
+
+package 를 사용할 프로젝트로 이동하세요. 그 다음 아래를 실행하세요.
+
+```
+npm link @namespace/package-name-here
+```
+
 # Build
 
 ```shell script
-yarn build
+npm run build
 ```
 
-# Publish
+# Deployment
+
+## Manually
 
 module 의 시작점은 `index.js`, `index.d.ts` 입니다.
 
 자세한 내용은 `package.json` 을 참조하세요.
 
-
 ```shell script
-yarn publish
+npm publish
 ```
 
-# Delete
-
-public package 의 경우 지울 수 없습니다.
-
-https://docs.github.com/en/packages/publishing-and-managing-packages/deleting-a-package#:~:text=Deleting%20a%20version%20of%20a%20private%20package%20on%20GitHub,-To%20delete%20a&text=To%20the%20right%20of%20the,want%20to%20delete%2C%20click%20Delete.
-
-# CI/CD
+## CI/CD
 
 Github Actions 를 이용하여 배포합니다.
 
 자세한 내용은 `.github/workflows/continuous-integration-workflow.yml` 파일을 참조하세요.
+
+# Delete
+
+package 삭제의 경우, 아래의 정책을 확인하세요.
+
+https://docs.github.com/en/packages/publishing-and-managing-packages/deleting-a-package#:~:text=Deleting%20a%20version%20of%20a%20private%20package%20on%20GitHub,-To%20delete%20a&text=To%20the%20right%20of%20the,want%20to%20delete%2C%20click%20Delete
